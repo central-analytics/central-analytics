@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Central Analytics</title>
+<meta name="description" content="Get in touch with Central Analytics to scope an economic impact study, forecast, or public policy analysis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="120" cy="120" r="108" fill="none" stroke="#1B2A4A" stroke-width="2.5"/>
+        <circle cx="120" cy="120" r="90" fill="none" stroke="#B08D57" stroke-width="1.5"/>
+        <line x1="97" y1="141" x2="97" y2="110" stroke="#B08D57" stroke-width="4" stroke-linecap="round"/>
+        <line x1="120" y1="141" x2="120" y2="94" stroke="#1B2A4A" stroke-width="4" stroke-linecap="round"/>
+        <line x1="143" y1="141" x2="143" y2="118" stroke="#B08D57" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-word">CENTRAL <span class="thin">ANALYTICS</span></span>
+    </a>
+    <div class="navlinks">
+      <a href="services.html">Services</a>
+      <a href="approach.html">Approach</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <a href="contact.html" class="nav-cta">Start a project</a>
+  </nav>
+</header>
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow on-dark">Start a project</span>
+      <h1>Let's talk about your project</h1>
+      <p class="lede">Tell us about the project, the timeline, and who needs to see the results. We'll follow up to scope the study and next steps.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="contact-wrap">
+        <div class="contact-info reveal">
+          <span class="eyebrow">Get in touch</span>
+          <h2>Reach us directly</h2>
+          <p>Prefer email or phone? Use the details below, or send the form and we'll respond within one business day.</p>
+          <div class="contact-detail">
+            <div><span>Email</span>hello@centralanalytics.com</div>
+            <div><span>Phone</span>[Add phone number]</div>
+            <div><span>Location</span>[Add street address]<br>Tempe, AZ [zip]</div>
+          </div>
+        </div>
+        <form class="reveal" action="mailto:hello@centralanalytics.com" method="post" enctype="text/plain">
+          <div class="form-row">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Jane Smith" required>
+            </div>
+            <div>
+              <label for="org">Organization</label>
+              <input id="org" name="org" type="text" placeholder="Company or agency">
+            </div>
+          </div>
+          <div class="form-row">
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="jane@company.com" required>
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555">
+            </div>
+          </div>
+          <div>
+            <label for="message">Tell us about the project</label>
+            <textarea id="message" name="message" placeholder="Project type, location, and timeline"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <svg class="brand-mark" width="30" height="30" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="120" cy="120" r="108" fill="none" stroke="#F8F6F1" stroke-width="2.5" opacity="0.7"/>
+          <circle cx="120" cy="120" r="90" fill="none" stroke="#B08D57" stroke-width="1.5"/>
+          <line x1="97" y1="141" x2="97" y2="110" stroke="#B08D57" stroke-width="4" stroke-linecap="round"/>
+          <line x1="120" y1="141" x2="120" y2="94" stroke="#F8F6F1" stroke-width="4" stroke-linecap="round"/>
+          <line x1="143" y1="141" x2="143" y2="118" stroke="#B08D57" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-word">CENTRAL <span class="thin">ANALYTICS</span></span>
+      </div>
+      <div class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="approach.html">Approach</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Central Analytics. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="X">X</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
