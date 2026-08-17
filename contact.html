@@ -52,7 +52,9 @@
             <div><span>Phone</span>(602) 856-7689</div>
           </div>
         </div>
-        <form class="reveal" action="mailto:admin@central-analytics.com" method="post" enctype="text/plain">
+        <form class="reveal" id="contact-form">
+          <input type="hidden" name="access_key" value="511db00a-8af8-4cf9-9daa-ce2c7d590c1a">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-row">
             <div>
               <label for="name">Name</label>
@@ -77,11 +79,60 @@
             <label for="message">Tell us about the project</label>
             <textarea id="message" name="message" placeholder="Project type, location, and timeline"></textarea>
           </div>
-          <button type="submit" class="submit-btn">Send message</button>
+          <input type="hidden" name="subject" value="New inquiry from centralanalytics.com contact form">
+          <input type="hidden" name="from_name" value="Central Analytics website">
+          <button type="submit" class="submit-btn" id="contact-submit-btn">Send message</button>
+          <p id="contact-form-status" role="status" style="font-size:14px; margin-top:4px;"></p>
         </form>
       </div>
     </div>
   </section>
+
+  <script>
+    (function () {
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+      var statusEl = document.getElementById('contact-form-status');
+      var btn = document.getElementById('contact-submit-btn');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.textContent = 'Sending\u2026';
+        statusEl.textContent = '';
+        statusEl.style.color = '';
+
+        var formData = new FormData(form);
+        var payload = Object.fromEntries(formData.entries());
+        payload.botcheck = formData.get('botcheck') ? true : false;
+
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload)
+        })
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            if (data.success) {
+              statusEl.style.color = 'var(--gold-600)';
+              statusEl.textContent = "Thanks \u2014 your message has been sent. We'll be in touch soon.";
+              form.reset();
+              btn.textContent = 'Send message';
+            } else {
+              throw new Error(data.message || 'Submission failed');
+            }
+          })
+          .catch(function () {
+            statusEl.style.color = '#B3261E';
+            statusEl.textContent = 'Something went wrong sending your message. Please email admin@central-analytics.com directly.';
+            btn.textContent = 'Send message';
+          })
+          .finally(function () {
+            btn.disabled = false;
+          });
+      });
+    })();
+  </script>
 
 </main>
 <footer>
