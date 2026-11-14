@@ -305,12 +305,12 @@ section{padding:96px 0; scroll-margin-top:84px;}
 form{display:flex; flex-direction:column; gap:18px;}
 .form-row{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
 label{font-size:12.5px; text-transform:uppercase; letter-spacing:0.07em; color:var(--slate-500); font-family:inherit; margin-bottom:8px; display:block;}
-input, textarea{
+input, textarea, select{
   width:100%; border:1px solid rgba(27,42,74,0.2); background:var(--white);
   padding:13px 14px; font-family:inherit; font-size:14.5px; border-radius:2px;
   color:var(--ink); transition:border-color .15s ease;
 }
-input:focus, textarea:focus{outline:none; border-color:var(--gold-500);}
+input:focus, textarea:focus, select:focus{outline:none; border-color:var(--gold-500);}
 textarea{resize:vertical; min-height:110px;}
 .submit-btn{
   background:var(--navy-900); color:var(--white); font-weight:500; font-size:14px;
@@ -363,3 +363,51 @@ footer{background:var(--navy-950); color:var(--slate-300); padding:56px 0 32px;}
   .steps{grid-template-columns:1fr;}
   .step{border-right:none;}
 }
+
+
+/* ---------- Questionnaire ---------- */
+.q-wrap{max-width:820px; margin:0 auto; padding:0 32px;}
+.q-form{display:flex; flex-direction:column;}
+.q-confidential{
+  border-left:3px solid var(--gold-500); background:var(--cream-100);
+  padding:18px 22px; font-size:14.5px; line-height:1.7; color:var(--navy-800); margin-bottom:12px;
+}
+.q-confidential strong{color:var(--navy-900);}
+.q-section{padding:44px 0; border-top:1px solid rgba(27,42,74,0.14);}
+.q-section.first{border-top:none; padding-top:28px;}
+.q-section-head{display:flex; align-items:baseline; gap:16px; margin-bottom:8px;}
+.q-num{font-size:12px; letter-spacing:0.14em; color:var(--gold-600); text-transform:uppercase; font-weight:600;}
+.q-section h2{font-size:clamp(22px,2.6vw,28px);}
+.q-note{color:var(--slate-500); font-size:14.5px; line-height:1.7; max-width:62ch; margin:8px 0 4px;}
+.q-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px 24px; margin-top:24px;}
+.q-field{display:flex; flex-direction:column;}
+.q-field.full{grid-column:1 / -1;}
+.q-field label{
+  text-transform:none; letter-spacing:0; font-family:inherit; font-size:14px; font-weight:500;
+  color:var(--navy-800); margin-bottom:7px; line-height:1.4;
+}
+.q-field .hint{font-size:12.5px; color:var(--slate-500); margin-top:6px;}
+.q-money{position:relative;}
+.q-money > span{position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--slate-500); font-size:14.5px;}
+.q-money input{padding-left:28px;}
+.q-subhead{
+  grid-column:1 / -1; font-size:17px; color:var(--navy-900); margin-top:14px;
+  padding-top:18px; border-top:1px solid rgba(27,42,74,0.08);
+}
+.q-submit-row{padding-top:36px; border-top:1px solid rgba(27,42,74,0.14); display:flex; flex-direction:column; gap:14px;}
+@media (max-width:640px){
+  .q-grid{grid-template-columns:1fr;}
+  .q-wrap{padding:0 20px;}
+}
+
+.q-drop{margin-top:16px; border:1.5px dashed var(--gold-500); background:var(--cream-100); padding:34px 20px; text-align:center; cursor:pointer; display:flex; flex-direction:column; gap:6px; border-radius:2px; transition:background .2s, border-color .2s;}
+.q-drop strong{font-family:Georgia,'Times New Roman',Times,serif; font-size:19px; font-weight:500; color:var(--navy-900);}
+.q-drop span{font-size:13.5px; color:var(--slate-500);}
+.q-drop:hover, .q-drop:focus-visible, .q-drop.over{background:var(--white); border-color:var(--navy-800); outline:none;}
+.q-files{list-style:none; margin-top:14px; display:flex; flex-direction:column; gap:8px;}
+.q-files li{display:grid; grid-template-columns:1fr auto auto; gap:4px 14px; align-items:center; padding:10px 14px; background:var(--white); border:1px solid rgba(27,42,74,0.14); font-size:14px;}
+.q-fname{overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:var(--navy-900); min-width:0;}
+.q-fsize{color:var(--slate-500); font-size:12.5px;}
+.q-fremove{background:none; border:0; color:var(--gold-600); font:inherit; font-size:13px; cursor:pointer; text-decoration:underline;}
+.q-fbar{grid-column:1 / -1; height:3px; background:var(--cream-100);}
+.q-fbar i{display:block; height:100%; background:var(--gold-500); width:0; transition:width .15s;}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Ledger — Central Analytics</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="ledger.css">
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="120" cy="120" r="108" fill="none" stroke="#1B2A4A" stroke-width="2.5"/>
+        <circle cx="120" cy="120" r="90" fill="none" stroke="#B08D57" stroke-width="1.5"/>
+        <line x1="97" y1="141" x2="97" y2="110" stroke="#B08D57" stroke-width="4" stroke-linecap="round"/>
+        <line x1="120" y1="141" x2="120" y2="94" stroke="#1B2A4A" stroke-width="4" stroke-linecap="round"/>
+        <line x1="143" y1="141" x2="143" y2="118" stroke="#B08D57" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-word">CENTRAL <span class="thin">ANALYTICS</span></span>
+    </a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="approach.html">Approach</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="contact.html" class="nav-cta">Start a project</a>
+  </nav>
+</header>
+<main class="pl">
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow on-dark">Internal</span>
+      <h1>Project ledger</h1>
+      <p class="lede" id="who">Project status, invoices, and revenue. Saved in this browser; see Backup.</p>
+    </div>
+  </section>
+  <div class="wrap wrap-pad">
+    <nav class="tabs" id="tabs" aria-label="Sections" hidden></nav>
+    <div id="app"><div class="empty"><strong>Loading</strong>One moment.</div></div>
+  </div>
+  <div id="layer"></div>
+  <div class="toast" id="toast" hidden role="status"></div>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <svg class="brand-mark" width="30" height="30" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="120" cy="120" r="108" fill="none" stroke="#F8F6F1" stroke-width="2.5" opacity="0.7"/>
+          <circle cx="120" cy="120" r="90" fill="none" stroke="#B08D57" stroke-width="1.5"/>
+          <line x1="97" y1="141" x2="97" y2="110" stroke="#B08D57" stroke-width="4" stroke-linecap="round"/>
+          <line x1="120" y1="141" x2="120" y2="94" stroke="#F8F6F1" stroke-width="4" stroke-linecap="round"/>
+          <line x1="143" y1="141" x2="143" y2="118" stroke="#B08D57" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-word">CENTRAL <span class="thin">ANALYTICS</span></span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="approach.html">Approach</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Central Analytics. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+<script src="ledger-common.js"></script>
+<script src="ledger-store.js"></script>
+<script src="status.js"></script>
+<script>document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());</script>
+</body>
+</html>

@@ -30,13 +30,13 @@ files as-is.
 
 ## Custom domain (optional)
 
-If you want `centralanalytics.com` instead of the github.io URL:
+If you want `central-analytics.com` instead of the github.io URL:
 
 1. Open `CNAME` in this folder and replace the placeholder with your real domain,
    then upload/commit it to the repo root (GitHub Pages reads this file to know
    which domain to serve).
 2. At your domain registrar (wherever you bought the domain), add these DNS records:
-   - Four **A** records for the apex domain (`centralanalytics.com`) pointing to
+   - Four **A** records for the apex domain (`central-analytics.com`) pointing to
      GitHub's Pages IPs: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`,
      `185.199.111.153`
    - A **CNAME** record for `www` pointing to `<your-username>.github.io`
@@ -50,3 +50,11 @@ Any file changes committed to `main` go live automatically within a minute or tw
 — no separate "deploy" step. You can edit files directly in GitHub's web editor
 (pencil icon on any file) for small text changes, or re-upload files for bigger
 changes.
+
+## Project ledger (internal)
+
+`status.html` is an internal page for project status, invoices and revenue. It is not linked from the site menu; open it by typing `central-analytics.com/status.html`. It is hidden from search engines.
+
+- All data is stored in your own browser (nothing is uploaded anywhere, so nothing is published to GitHub).
+- Use the **Backup** tab to download a file after changes, and to restore it on another computer or phone.
+- To load the two Clenera projects and their deposit invoices, open Backup > Restore and choose `ledger-starting-data.json` (keep that file off GitHub).
